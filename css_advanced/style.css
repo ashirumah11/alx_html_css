@@ -1,0 +1,162 @@
+/*
+ * Homepage Stylesheet
+ * Based on Figma Design (Placeholder values used where design specifics could not be extracted from binary file content)
+ *
+ * --- Utility Classes & Base Reset ---
+ */
+
+:root {
+    /* Colors (Replace with actual values from Figma) */
+    --color-primary: #007bff;     /* Example: Main interactive color */
+    --color-secondary: #6c757d;   /* Example: Secondary text/elements */
+    --color-background: #ffffff;  /* Example: Page background */
+    --color-text-dark: #343a40;   /* Example: Body text color */
+    --color-accent: #28a745;      /* Example: Button/Highlight color */
+
+    /* Typography (Replace with actual font names/sizes from Figma) */
+    --font-family-base: 'Arial', sans-serif;
+    --font-size-base: 16px;
+
+    /* Spacing (Replace with actual values from Figma) */
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+}
+
+/* Simple Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+}
+
+/* --- Layout Selectors --- */
+
+.container {
+    /* Max Width from Figma, centered content */
+    max-width: 1200px; /* Placeholder width */
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* --- Header & Navigation --- */
+
+header {
+    background-color: var(--color-background);
+    border-bottom: 1px solid #dee2e6; /* Placeholder color */
+    padding: var(--spacing-md) 0;
+    /* Use flex for simple alignment */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navigation links */
+nav a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    margin-left: var(--spacing-lg);
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+/* --- Hero Section --- */
+
+.hero {
+    /* Height from Figma */
+    min-height: 500px; /* Placeholder height */
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    /* Image setup (Replace 'hero-bg.jpg' with actual image name from Figma) */
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: #ffffff; /* Assuming white text on dark image background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 3rem; /* Placeholder size */
+    margin-bottom: var(--spacing-md);
+}
+
+.hero p {
+    font-size: 1.25rem; /* Placeholder size */
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Primary Button Style */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px; /* Placeholder radius */
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1e7e34; /* Darker shade of accent */
+}
+
+/* --- Content Sections --- */
+
+.section {
+    padding: 60px 0; /* Placeholder padding */
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2rem; /* Placeholder size */
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
+}
+
+/* Simple grid layout for features/cards (requires wrapper div) */
+.grid-3-col {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.card {
+    /* Width and padding from Figma */
+    flex: 1 1 300px; /* Flexible card size */
+    padding: var(--spacing-lg);
+    border: 1px solid #e9ecef;
+    border-radius: 8px; /* Placeholder radius */
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Footer --- */
+
+footer {
+    background-color: var(--color-text-dark);
+    color: #ffffff;
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
