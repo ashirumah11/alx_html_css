@@ -1,18 +1,192 @@
-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/*
+ * Homepage Stylesheet - Revised (Focusing on Header and Hero Section)
+ * Based on visual analysis of 'walllll.png' and standard design practices.
+ * PLACEHOLDERS are used where exact Figma values are unavailable.
+ *
+ * --- Utility Classes & Base Reset ---
+ */
+
+:root {
+    /* Colors (Estimations based on a typical clean, modern design) */
+    --color-primary: #007bff;     /* Blue, typically for links/accents */
+    --color-secondary: #6c757d;   /* Gray, for secondary text */
+    --color-background: #ffffff;  /* White/Light background */
+    --color-text-dark: #343a40;   /* Near-Black for main text */
+    --color-accent: #28a745;      /* Green, often used for main CTA/conversion */
+    --color-light-border: #e9ecef; /* Light gray for borders */
+
+    /* Typography (Estimations) */
+    --font-family-base: 'Inter', sans-serif; /* Modern, common sans-serif font */
+    --font-size-base: 16px;
+
+    /* Spacing (Estimations) */
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
 }
 
-/* --- Footer --- */
+/* Simple Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-footer {
-    background-color: var(--color-text-dark);
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+}
+
+/* --- Layout Selectors --- */
+
+.container {
+    /* Max Width estimated from standard web design practice (adjust if known from Figma) */
+    max-width: 1140px; 
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* --- 1. Header & Navigation (Styling based on 'walllll.png' visual) --- */
+
+header {
+    background-color: var(--color-background);
+    /* Subtle drop shadow/border for a floating effect seen in modern headers */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+    padding: 15px 0; /* Estimated vertical padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo/Brand Text (assuming simple text-based logo for simplicity) */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    text-decoration: none;
+}
+
+/* Navigation links container */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    /* Spacing between links */
+    margin-right: 25px; 
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Call-to-action button in navigation */
+.nav-button {
+    /* Uses the accent color for a clear CTA */
+    background-color: var(--color-accent);
     color: #ffffff;
-    padding: var(--spacing-lg) 0;
+    padding: 8px 20px;
+    border-radius: 4px; 
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+    background-color: #1e7e34; /* Darker shade */
+}
+
+
+/* --- 2. Hero Section (First Section) --- */
+
+.hero {
+    /* Height estimated for a typical full-screen-ish banner */
+    min-height: 70vh; 
+    text-align: center;
+    padding: 80px 0; 
+    
+    /* Background Image (Replace with actual image path/name from Figma) */
+    background: url('images/hero-background-image.jpg') no-repeat center center/cover;
+    
+    /* Overlay to ensure white text is visible (assuming dark background image) */
+    position: relative;
+    z-index: 1; /* Puts the content above the overlay */
+    
+    /* Flex for perfect center alignment of content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dark Overlay for Readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* 40% opaque black overlay */
+    z-index: 0;
+}
+
+/* Ensure content is positioned correctly above the overlay */
+.hero-content {
+    position: relative;
+    z-index: 2; 
+    color: #ffffff;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5rem; /* Large, bold headline */
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.4rem; /* Subheading size */
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+}
+
+/* Primary Button Style (Used for Hero CTA) */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px; 
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1e7e34; 
+}
+
+/* --- Subsequent Section Styles (Minimal for compliance) --- */
+
+.section {
+    padding: 60px 0;
     text-align: center;
 }
 
-footer p {
-    font-size: 0.9rem;
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-dark);
 }
-
