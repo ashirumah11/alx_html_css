@@ -1,192 +1,189 @@
-/*
- * Homepage Stylesheet - Revised (Focusing on Header and Hero Section)
- * Based on visual analysis of 'walllll.png' and standard design practices.
- * PLACEHOLDERS are used where exact Figma values are unavailable.
- *
- * --- Utility Classes & Base Reset ---
- */
+@custom-variant dark (&:is(.dark *));
 
 :root {
-    /* Colors (Estimations based on a typical clean, modern design) */
-    --color-primary: #007bff;     /* Blue, typically for links/accents */
-    --color-secondary: #6c757d;   /* Gray, for secondary text */
-    --color-background: #ffffff;  /* White/Light background */
-    --color-text-dark: #343a40;   /* Near-Black for main text */
-    --color-accent: #28a745;      /* Green, often used for main CTA/conversion */
-    --color-light-border: #e9ecef; /* Light gray for borders */
-
-    /* Typography (Estimations) */
-    --font-family-base: 'Inter', sans-serif; /* Modern, common sans-serif font */
-    --font-size-base: 16px;
-
-    /* Spacing (Estimations) */
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 32px;
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
-/* Simple Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
 }
 
-body {
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-base);
-    line-height: 1.5;
-    color: var(--color-text-dark);
-    background-color: var(--color-background);
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* --- Layout Selectors --- */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
 
-.container {
-    /* Max Width estimated from standard web design practice (adjust if known from Figma) */
-    max-width: 1140px; 
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-/* --- 1. Header & Navigation (Styling based on 'walllll.png' visual) --- */
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
 
-header {
-    background-color: var(--color-background);
-    /* Subtle drop shadow/border for a floating effect seen in modern headers */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
-    padding: 15px 0; /* Estimated vertical padding */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
 }
 
-/* Logo/Brand Text (assuming simple text-based logo for simplicity) */
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-text-dark);
-    text-decoration: none;
-}
-
-/* Navigation links container */
-nav {
-    display: flex;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--color-text-dark);
-    /* Spacing between links */
-    margin-right: 25px; 
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-nav a:hover {
-    color: var(--color-primary);
-}
-
-/* Call-to-action button in navigation */
-.nav-button {
-    /* Uses the accent color for a clear CTA */
-    background-color: var(--color-accent);
-    color: #ffffff;
-    padding: 8px 20px;
-    border-radius: 4px; 
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.2s;
-}
-
-.nav-button:hover {
-    background-color: #1e7e34; /* Darker shade */
-}
-
-
-/* --- 2. Hero Section (First Section) --- */
-
-.hero {
-    /* Height estimated for a typical full-screen-ish banner */
-    min-height: 70vh; 
-    text-align: center;
-    padding: 80px 0; 
-    
-    /* Background Image (Replace with actual image path/name from Figma) */
-    background: url('images/hero-background-image.jpg') no-repeat center center/cover;
-    
-    /* Overlay to ensure white text is visible (assuming dark background image) */
-    position: relative;
-    z-index: 1; /* Puts the content above the overlay */
-    
-    /* Flex for perfect center alignment of content */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Dark Overlay for Readability */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* 40% opaque black overlay */
-    z-index: 0;
-}
-
-/* Ensure content is positioned correctly above the overlay */
-.hero-content {
-    position: relative;
-    z-index: 2; 
-    color: #ffffff;
-    max-width: 800px;
-}
-
-.hero h1 {
-    font-size: 3.5rem; /* Large, bold headline */
-    margin-bottom: var(--spacing-md);
-    line-height: 1.1;
-    font-weight: 800;
-}
-
-.hero p {
-    font-size: 1.4rem; /* Subheading size */
-    margin-bottom: var(--spacing-lg);
-    font-weight: 300;
-}
-
-/* Primary Button Style (Used for Hero CTA) */
-.btn-primary {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--color-accent);
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 6px; 
-    font-size: 1.1rem;
-    font-weight: 700;
-    transition: background-color 0.3s;
-}
-
-.btn-primary:hover {
-    background-color: #1e7e34; 
-}
-
-/* --- Subsequent Section Styles (Minimal for compliance) --- */
-
-.section {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.section h2 {
-    font-size: 2rem;
-    margin-bottom: var(--spacing-lg);
-    color: var(--color-text-dark);
+html {
+  font-size: var(--font-size);
 }
