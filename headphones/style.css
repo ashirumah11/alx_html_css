@@ -1,0 +1,79 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b1b3c;
+  color: white;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(rgba(11, 27, 60, 0.9), rgba(11, 27, 60, 0.9)),
+              url("images/headphones_hero_1.jpg") center/cover no-repeat;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.logo img {
+  height: 35px;
+}
+
+/* Navigation */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: white;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: #ff5c5c; /* Accent red tone from your button */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+}
+
